@@ -1,16 +1,16 @@
-name: workflow1
-  on:
-    push:
-      branches:
-        - main
-  jobs:
-    firstworkflowjob:
-      name: first workflow job
-      runs-on: ubuntu-latest
-      steps:
-        name: Checkout steps
-        uses: actions/checkout@v4
-        - name: run maven
-          run: mvn clean package
-          shell: bash
+name: first workflow
+on:
+  push:
+    branches:
+      - "main"
+jobs:
+  firstworkflowjob:
+    name: first workflow job
+    runs-on: ubuntu-latest
+    steps:
+      name: Checkout steps
+      uses: actions/checkout@v4
+      - name: run maven
+        run: mvn clean package
+        shell: bash
 
